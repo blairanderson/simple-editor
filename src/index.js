@@ -27,7 +27,23 @@ function showMarkerArea(target) {
   markerArea.show();
 }
 
-const sampleImage = document.getElementById("sampleImage");
-sampleImage.addEventListener("click", () => {
-  showMarkerArea(sampleImage);
+const image = document.getElementById("targetImage");
+image.addEventListener("click", () => {
+  showMarkerArea(image);
 });
+
+image.onload = function () {
+  showMarkerArea(image);
+};
+
+const target = window["image-input"];
+
+target.onchange = (evt) => {
+  const [file] = target.files;
+  if (file) {
+    image.src = URL.createObjectURL(file);
+    showMarkerArea(image);
+  }
+};
+
+target.removeAttribute("disabled");

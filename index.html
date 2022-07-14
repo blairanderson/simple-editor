@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>marker.js 2 - All Defaults Demo</title>
-    <meta charset="UTF-8" />
+    <title>Simple Image WaterMark Maker</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
-    <div id="app">
-      <img id="sampleImage" src="img/sample.jpg" crossorigin="anonymous" />
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Simple Image Markup</h1>
+        </div>
+        <div class="col-12">
+          <p class="lead">
+            Make basic edits (text / lines / arrows) to your photos.
+          </p>
+        </div>
+        <div class="col-12">
+          <form runat="server">
+            <input
+              accept="image/*"
+              disabled
+              type="file"
+              multiple="false"
+              id="image-input"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div class="row mt-3 mb-3">
+        <hr />
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <img
+            id="targetImage"
+            src="img/sample.jpg"
+            alt="Your Image"
+            class="img-fluid"
+            crossorigin="anonymous"
+          />
+        </div>
+      </div>
     </div>
 
     <script src="src/index.js"></script>
