@@ -1,6 +1,3 @@
-import "./styles.css";
-import * as markerjs2 from "markerjs2";
-
 function showMarkerArea(target) {
   const markerArea = new markerjs2.MarkerArea(target);
   markerArea.availableMarkerTypes = markerArea.ALL_MARKER_TYPES;
