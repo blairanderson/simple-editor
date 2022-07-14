@@ -115,8 +115,16 @@ function showMarkerArea(target) {
   markerArea.settings.defaultColorsFollowCurrentColors = true;
   markerArea.addEventListener("render", (event) => {
     target.src = event.dataUrl;
-    window.sampleMarkerState = event.state;
-    console.dir(window.sampleMarkerState);
+    fetch(target.src)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = `markup_${window.filename}`;
+        link.click();
+      })
+      .catch(console.error);
+    window.showSampleState = false;
   });
   markerArea.show();
 
@@ -132,13 +140,16 @@ image.onload = function () {
 };
 
 image.src = "img/sample.jpg";
+window.filename = "sample.jpg";
 
 const target = window["image-input"];
 
 target.onchange = (evt) => {
   const [file] = target.files;
   if (file) {
-    window.showSampleState = true;
+    debugger;
+    window.filename = file.name;
+    window.showSampleState = false;
     image.src = URL.createObjectURL(file);
     showMarkerArea(image);
   }
