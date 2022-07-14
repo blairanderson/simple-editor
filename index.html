@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Image WaterMark Maker</title>
+    <title>Amazon Product Image Markup Editor</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -16,14 +16,14 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1>Simple Image Markup</h1>
+          <h1>Product Image Markup Editor</h1>
         </div>
         <div class="col-12">
           <p class="lead">
             Make basic edits (text / lines / arrows) to your photos.
           </p>
         </div>
-        <div class="col-12">
+        <div class="col-6">
           <form runat="server">
             <input
               accept="image/*"
@@ -34,6 +34,12 @@
             />
           </form>
         </div>
+        <div class="col">
+          <small>
+            Click the checkbox in the upper-right corner to save your changes.
+            Then Right-Click the Image to save.
+          </small>
+        </div>
       </div>
 
       <div class="row mt-3 mb-3">
@@ -43,13 +49,47 @@
         <div class="col-12">
           <img
             id="targetImage"
-            src="img/sample.jpg"
+            src="img/echoshow.jpg"
             alt="Your Image"
             class="img-fluid"
             crossorigin="anonymous"
           />
         </div>
       </div>
+    </div>
+    <div class="container mt-5">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a
+              href="https://www.shipmentbot.com"
+              class="nav-link px-2 text-muted"
+              >ShipmentBot</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://shortcuts.shipmentbot.com"
+              class="nav-link px-2 text-muted"
+              >VendorCentral Shortcuts</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://shortcuts.shipmentbot.com"
+              class="nav-link px-2 text-muted"
+              >Amazon Product Image Editor</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">About</a>
+          </li>
+        </ul>
+        <p class="text-center text-muted">© 2021 Company, Inc</p>
+      </footer>
     </div>
     <script src="https://unpkg.com/markerjs2@2.17.0/markerjs2.js"></script>
     <script src="src/index.js"></script>
